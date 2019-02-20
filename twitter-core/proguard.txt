@@ -53,3 +53,5 @@
 -keepclassmembers class ** { @com.mopub.common.util.ReflectionTarget *; }
 
 -dontwarn com.twitter.*
+-dontwarn okhttp3.*
+-dontwarn com.mopub.*
