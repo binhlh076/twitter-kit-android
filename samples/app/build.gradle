@@ -26,6 +26,7 @@ android {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         testInstrumentationRunner "com.example.app.SpoonInstrumentationTestRunner"
+        consumerProguardFiles 'proguard.txt'
     }
 
     buildTypes {
@@ -43,7 +44,6 @@ android {
             resValue "bool", "com.twitter.sdk.android.COLLECT_IDENTIFIERS_ENABLED", "true"
             buildConfigField "String", "MOPUB_AD_UNIT_ID", "\"${props.getProperty("mopubAdUnitId")}\""
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt')
         }
     }
 
