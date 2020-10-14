@@ -18,8 +18,6 @@
 package com.twitter.sdk.android.mopub;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.widget.Adapter;
 
@@ -27,17 +25,17 @@ import com.mopub.nativeads.MoPubAdAdapter;
 import com.mopub.nativeads.MoPubNativeAdPositioning;
 import com.mopub.nativeads.RequestParameters;
 
-public class TwitterMoPubAdAdapter extends MoPubAdAdapter{
+public class TwitterMoPubAdAdapter extends MoPubAdAdapter {
     private static final String TWITTERKIT_KEYWORD = "src:twitterkit";
 
     /**
      * Creates a new TwitterMoPubAdAdapter object.
-     *
+     * <p>
      * By default, the adapter will contact the server to determine ad positions. If you
      * wish to hard-code positions in your app, see {@link TwitterMoPubAdAdapter( Activity,
      * MoPubNativeAdPositioning.MoPubClientPositioning )}.
      *
-     * @param activity The activity.
+     * @param activity        The activity.
      * @param originalAdapter Your original adapter.
      */
     public TwitterMoPubAdAdapter(Activity activity, Adapter originalAdapter) {
@@ -47,37 +45,36 @@ public class TwitterMoPubAdAdapter extends MoPubAdAdapter{
     /**
      * Creates a new TwitterMoPubAdAdapter object, using server positioning.
      *
-     * @param activity The activity.
+     * @param activity        The activity.
      * @param originalAdapter Your original adapter.
-     * @param adPositioning A positioning object for specifying where ads will be placed in your
-     * stream. See {@link MoPubNativeAdPositioning#serverPositioning()}.
+     * @param adPositioning   A positioning object for specifying where ads will be placed in your
+     *                        stream. See {@link MoPubNativeAdPositioning#serverPositioning()}.
      */
     public TwitterMoPubAdAdapter(Activity activity, Adapter originalAdapter,
-            MoPubNativeAdPositioning.MoPubServerPositioning adPositioning) {
+                                 MoPubNativeAdPositioning.MoPubServerPositioning adPositioning) {
         super(activity, originalAdapter, adPositioning);
     }
 
     /**
      * Creates a new TwitterMoPubAdAdapter object, using client positioning.
      *
-     * @param activity The activity.
+     * @param activity        The activity.
      * @param originalAdapter Your original adapter.
-     * @param adPositioning A positioning object for specifying where ads will be placed in your
-     * stream. See {@link MoPubNativeAdPositioning#clientPositioning()}.
+     * @param adPositioning   A positioning object for specifying where ads will be placed in your
+     *                        stream. See {@link MoPubNativeAdPositioning#clientPositioning()}.
      */
     public TwitterMoPubAdAdapter(Activity activity, Adapter originalAdapter,
-            MoPubNativeAdPositioning.MoPubClientPositioning adPositioning) {
+                                 MoPubNativeAdPositioning.MoPubClientPositioning adPositioning) {
         super(activity, originalAdapter, adPositioning);
     }
 
     @Override
-    public void loadAds(@NonNull final String adUnitId) {
+    public void loadAds(final String adUnitId) {
         loadAds(adUnitId, null);
     }
 
     @Override
-    public void loadAds(@NonNull final String adUnitId,
-            @Nullable final RequestParameters requestParams) {
+    public void loadAds(final String adUnitId, final RequestParameters requestParams) {
 
         final RequestParameters.Builder builder = new RequestParameters.Builder();
         if (requestParams != null) {
