@@ -53,11 +53,6 @@ android {
         sourceCompatibility rootProject.sourceCompatibilityVersion
         targetCompatibility rootProject.targetCompatibilityVersion
     }
-
-    testOptions {
-        unitTests.returnDefaultValues = true
-        unitTests.includeAndroidResources true
-    }
 }
 
 dependencies {
